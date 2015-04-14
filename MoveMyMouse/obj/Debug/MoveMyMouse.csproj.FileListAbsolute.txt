@@ -1,0 +1,9 @@
+c:\users\weiwei\documents\visual studio 2012\Projects\MoveMyMouse\MoveMyMouse\bin\Debug\MoveMyMouse.exe.config
+c:\users\weiwei\documents\visual studio 2012\Projects\MoveMyMouse\MoveMyMouse\bin\Debug\MoveMyMouse.exe
+c:\users\weiwei\documents\visual studio 2012\Projects\MoveMyMouse\MoveMyMouse\bin\Debug\MoveMyMouse.pdb
+c:\users\weiwei\documents\visual studio 2012\Projects\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.csprojResolveAssemblyReference.cache
+c:\users\weiwei\documents\visual studio 2012\Projects\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.Properties.Resources.resources
+c:\users\weiwei\documents\visual studio 2012\Projects\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.csproj.GenerateResource.Cache
+c:\users\weiwei\documents\visual studio 2012\Projects\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.exe
+c:\users\weiwei\documents\visual studio 2012\Projects\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.pdb
+c:\users\weiwei\documents\visual studio 2012\Projects\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.Form1.resources
