@@ -20,6 +20,8 @@ namespace MoveMyMouse
         public Form1()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Minimized;
+            this.ShowInTaskbar = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -177,6 +179,17 @@ namespace MoveMyMouse
             Process ps = new Process();
             ps.StartInfo.FileName = obj.ToString();
             ps.Start();
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void 關閉ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 

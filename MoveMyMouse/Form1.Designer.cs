@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.CheckYourMouse = new System.Windows.Forms.Timer(this.components);
             this.changebackcolor = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -38,11 +39,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Restartself = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.關閉ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CheckYourMouse
             // 
-            this.CheckYourMouse.Interval = 300000;
+            this.CheckYourMouse.Interval = 60000;
             this.CheckYourMouse.Tick += new System.EventHandler(this.CheckYourMouse_Tick);
             // 
             // changebackcolor
@@ -99,7 +104,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(25, 23);
             this.panel1.TabIndex = 4;
-
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipText = "我躲在這邊喔";
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "威潔之求你不要鎖定我的螢幕 2.0 躲起來版";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.關閉ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(221, 48);
+            // 
+            // 關閉ToolStripMenuItem
+            // 
+            this.關閉ToolStripMenuItem.Name = "關閉ToolStripMenuItem";
+            this.關閉ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.關閉ToolStripMenuItem.Text = "關閉我？我真的沒有惡意！";
+            this.關閉ToolStripMenuItem.Click += new System.EventHandler(this.關閉ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -112,10 +139,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "威潔之求你不要鎖定我的螢幕 ";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +159,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer Restartself;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 關閉ToolStripMenuItem;
     }
 }
 
