@@ -16,3 +16,4 @@ D:\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.csprojResolveAssemblyReference.
 D:\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.Form1.resources
 D:\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.Properties.Resources.resources
 D:\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.csproj.GenerateResource.Cache
+D:\MoveMyMouse\MoveMyMouse\obj\Debug\MoveMyMouse.Form2.resources

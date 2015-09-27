@@ -42,12 +42,18 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.關閉ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.秒數設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.關於ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CheckYourMouse
             // 
-            this.CheckYourMouse.Interval = 60000;
+            this.CheckYourMouse.Interval = 10000;
             this.CheckYourMouse.Tick += new System.EventHandler(this.CheckYourMouse_Tick);
             // 
             // changebackcolor
@@ -110,23 +116,70 @@
             this.notifyIcon1.BalloonTipText = "我躲在這邊喔";
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "威潔之求你不要鎖定我的螢幕 2.0 躲起來版";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.關於ToolStripMenuItem,
+            this.秒數設定ToolStripMenuItem,
             this.關閉ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(221, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
             // 
             // 關閉ToolStripMenuItem
             // 
             this.關閉ToolStripMenuItem.Name = "關閉ToolStripMenuItem";
-            this.關閉ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.關閉ToolStripMenuItem.Text = "關閉我？我真的沒有惡意！";
+            this.關閉ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.關閉ToolStripMenuItem.Text = "關閉";
             this.關閉ToolStripMenuItem.Click += new System.EventHandler(this.關閉ToolStripMenuItem_Click);
+            // 
+            // 秒數設定ToolStripMenuItem
+            // 
+            this.秒數設定ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sToolStripMenuItem,
+            this.sToolStripMenuItem1,
+            this.sToolStripMenuItem2,
+            this.sToolStripMenuItem3});
+            this.秒數設定ToolStripMenuItem.Name = "秒數設定ToolStripMenuItem";
+            this.秒數設定ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.秒數設定ToolStripMenuItem.Text = "秒數設定";
+            // 
+            // sToolStripMenuItem
+            // 
+            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
+            this.sToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sToolStripMenuItem.Text = "10 s";
+            this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
+            // 
+            // sToolStripMenuItem1
+            // 
+            this.sToolStripMenuItem1.Name = "sToolStripMenuItem1";
+            this.sToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.sToolStripMenuItem1.Text = "60 s";
+            this.sToolStripMenuItem1.Click += new System.EventHandler(this.sToolStripMenuItem1_Click);
+            // 
+            // sToolStripMenuItem2
+            // 
+            this.sToolStripMenuItem2.Name = "sToolStripMenuItem2";
+            this.sToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.sToolStripMenuItem2.Text = "180 s";
+            this.sToolStripMenuItem2.Click += new System.EventHandler(this.sToolStripMenuItem2_Click);
+            // 
+            // sToolStripMenuItem3
+            // 
+            this.sToolStripMenuItem3.Name = "sToolStripMenuItem3";
+            this.sToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.sToolStripMenuItem3.Text = "300 s";
+            this.sToolStripMenuItem3.Click += new System.EventHandler(this.sToolStripMenuItem3_Click);
+            // 
+            // 關於ToolStripMenuItem
+            // 
+            this.關於ToolStripMenuItem.Name = "關於ToolStripMenuItem";
+            this.關於ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.關於ToolStripMenuItem.Text = "關於";
+            this.關於ToolStripMenuItem.Click += new System.EventHandler(this.關於ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -140,7 +193,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "威潔之求你不要鎖定我的螢幕 ";
+            this.Text = "求你不要鎖定我的螢幕  v2.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -162,6 +215,12 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 關閉ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 秒數設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem 關於ToolStripMenuItem;
     }
 }
 

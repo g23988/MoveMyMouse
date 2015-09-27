@@ -17,43 +17,47 @@ namespace MoveMyMouse
     {
 
         Point after = Cursor.Position;
+
+
         public Form1()
         {
             InitializeComponent();
+            //啟動時縮到通知列
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             label1.Text = (CheckYourMouse.Interval / 1000).ToString();
+            notifyIcon1.Text = (CheckYourMouse.Interval/1000).ToString()+" 秒移動一次";
             //KeyboardHook.globalControlOnly = false;  //只有Global KeyDown會起作用，其他程式不能攔截鍵盤事件
             //KeyboardHook.GlobalKeyDown += KeyboardHook_KeyDown; 
         }
 
         private void CheckYourMouse_Tick(object sender, EventArgs e)
         {
-            //
-            //listBox1.Items.Add(v.ToString());
-            //listBox1.Items.Add(after.ToString());
-            //if (v != after)
-            //{
-                
-            //    
-            //}
-            
             //如果mouse 的位置跟三分鐘前的一樣
             //就啟動
             Point before = Cursor.Position;
+            Thread sample = new Thread(MoveMouse);
             if(after == before){
-                Point v = Cursor.Position;
-                MoveMouse(v);
+                //啟動執行緒去移動滑鼠
+                sample.Start();
             }
-
-
-
+            //檢察執行緒狀態
+            Thread.Sleep(2000);
+            if (sample.IsAlive)
+            {
+                sample.Abort();
+            }
+            //釋放記憶體
+            GC.Collect();
+            label1.Text = (CheckYourMouse.Interval / 1000).ToString();
           
         }
+        
         private void changebackcolor_Tick(object sender, EventArgs e)
         {
             checkbackgroup();
@@ -69,24 +73,34 @@ namespace MoveMyMouse
             
         }
 
-        private void checkbackgroup() { 
+        private void checkbackgroup() {
             Point before = Cursor.Position;
-
-            if(before == after ){
-                panel1.BackColor = System.Drawing.Color.Peru;
-                //this.BackColor = System.Drawing.Color.Pink;
-                CheckYourMouse.Enabled = true;
-                
-                
-            }
-            else
+            try
             {
-                panel1.BackColor = System.Drawing.Color.SeaGreen;
-                //this.BackColor = System.Drawing.Color.SpringGreen;
-                after = before;
-                CheckYourMouse.Enabled = false;
-                label1.Text = (CheckYourMouse.Interval / 1000).ToString();
+                if (before == after)
+                {
+                    panel1.BackColor = System.Drawing.Color.Peru;
+                    //this.BackColor = System.Drawing.Color.Pink;
+                    CheckYourMouse.Enabled = true;
+
+
+                }
+                else
+                {
+                    panel1.BackColor = System.Drawing.Color.SeaGreen;
+                    //this.BackColor = System.Drawing.Color.SpringGreen;
+                    after = before;
+                    CheckYourMouse.Enabled = false;
+                    label1.Text = (CheckYourMouse.Interval / 1000).ToString();
+                }
             }
+            catch (Exception)
+            {
+                GC.Collect();
+            }
+
+
+            
             
         }
 
@@ -99,24 +113,23 @@ namespace MoveMyMouse
         }
 
 
-        private void MoveMouse(Point v) {
-            this.Cursor = new Cursor(Cursor.Current.Handle);
-            Point back = Cursor.Position;
-            Cursor.Position = new Point(Cursor.Position.X - 10000, Cursor.Position.Y + 10000);
-           // Cursor.Clip = new Rectangle(this.Location, this.Size);
-            //Cursor.Position = new Point(-200,1000);
-            Thread.Sleep(300);
-            MoveMyMouse.Mouse.LeftClick();
-            Thread.Sleep(600);
-            MoveMyMouse.Mouse.LeftClick();
-            Cursor.Position = new Point(back.X, back.Y);
-            label1.Text = (CheckYourMouse.Interval / 1000).ToString();
-            //自我毀滅並啟動(對應記憶體爆量)
-            Application.ExitThread();
-            Thread thtmp = new Thread(new ParameterizedThreadStart(run));
-            object appName = Application.ExecutablePath;
-            Thread.Sleep(1);
-            thtmp.Start(appName);
+        static private void MoveMouse() {
+            //this.Cursor = new Cursor(Cursor.Current.Handle);
+            try
+            {
+                Point back = Cursor.Position;
+                Cursor.Position = new Point(Cursor.Position.X - 10000, Cursor.Position.Y + 10000);
+                Thread.Sleep(300);
+                MoveMyMouse.Mouse.LeftClick();
+                Thread.Sleep(600);
+                MoveMyMouse.Mouse.LeftClick();
+                Cursor.Position = new Point(back.X, back.Y);
+            }
+            catch (Exception)
+            {
+                GC.Collect();
+            }
+            
             
         }
 
@@ -174,22 +187,47 @@ namespace MoveMyMouse
         }
 
 
-        private void run(Object obj)
-        {
-            Process ps = new Process();
-            ps.StartInfo.FileName = obj.ToString();
-            ps.Start();
-        }
-
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
             this.WindowState = FormWindowState.Normal;
         }
 
+        
+        //右鍵功能表
         private void 關閉ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void sToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckYourMouse.Interval = 10000;
+            notifyIcon1.Text = (CheckYourMouse.Interval / 1000).ToString() + " 秒移動一次";
+        }
+
+        private void sToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CheckYourMouse.Interval = 60000;
+            notifyIcon1.Text = (CheckYourMouse.Interval / 1000).ToString() + " 秒移動一次";
+        }
+
+        private void sToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            CheckYourMouse.Interval = 180000;
+            notifyIcon1.Text = (CheckYourMouse.Interval / 1000).ToString() + " 秒移動一次";
+        }
+
+        private void sToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            CheckYourMouse.Interval = 300000;
+            notifyIcon1.Text = (CheckYourMouse.Interval / 1000).ToString() + " 秒移動一次";
+        }
+
+        private void 關於ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 frm2 = new Form2();
+            frm2.Show();
         }
 
 
