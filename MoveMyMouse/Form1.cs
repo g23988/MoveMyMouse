@@ -30,6 +30,7 @@ namespace MoveMyMouse
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             //全域掛勾keyboard
             try
             {
@@ -221,6 +222,12 @@ namespace MoveMyMouse
         {
             Form2 frm2 = new Form2();
             frm2.Show();
+        }
+
+        private void Form1_Deactivate(object sender, EventArgs e)
+        {
+            this.Hide();
+
         }
 
 
