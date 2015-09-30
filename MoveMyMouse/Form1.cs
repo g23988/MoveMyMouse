@@ -224,11 +224,22 @@ namespace MoveMyMouse
             frm2.Show();
         }
 
-        private void Form1_Deactivate(object sender, EventArgs e)
+        private void min_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-
+            this.WindowState = FormWindowState.Minimized;
+            this.ShowInTaskbar = false;
         }
+
+        private void hide_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.WindowState = FormWindowState.Minimized;
+            this.ShowInTaskbar = false;
+            notifyIcon1.Visible = false;
+        }
+
+
 
 
 

@@ -47,6 +47,8 @@
             this.sToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.sToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.關閉ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.min_btn = new System.Windows.Forms.Button();
+            this.hide_btn = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 9);
+            this.label1.Location = new System.Drawing.Point(20, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 12);
             this.label1.TabIndex = 0;
@@ -78,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 9);
+            this.label2.Location = new System.Drawing.Point(50, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 12);
             this.label2.TabIndex = 1;
@@ -87,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 25);
+            this.label3.Location = new System.Drawing.Point(38, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 12);
             this.label3.TabIndex = 2;
@@ -97,7 +99,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(80, 47);
+            this.label4.Location = new System.Drawing.Point(50, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 12);
             this.label4.TabIndex = 3;
@@ -173,20 +175,42 @@
             this.關閉ToolStripMenuItem.Text = "關閉";
             this.關閉ToolStripMenuItem.Click += new System.EventHandler(this.關閉ToolStripMenuItem_Click);
             // 
+            // min_btn
+            // 
+            this.min_btn.Location = new System.Drawing.Point(205, 9);
+            this.min_btn.Name = "min_btn";
+            this.min_btn.Size = new System.Drawing.Size(75, 23);
+            this.min_btn.TabIndex = 4;
+            this.min_btn.Text = "躲系統列";
+            this.min_btn.UseVisualStyleBackColor = true;
+            this.min_btn.Click += new System.EventHandler(this.min_btn_Click);
+            // 
+            // hide_btn
+            // 
+            this.hide_btn.Location = new System.Drawing.Point(205, 36);
+            this.hide_btn.Name = "hide_btn";
+            this.hide_btn.Size = new System.Drawing.Size(75, 23);
+            this.hide_btn.TabIndex = 5;
+            this.hide_btn.Text = "完整消失";
+            this.hide_btn.UseVisualStyleBackColor = true;
+            this.hide_btn.Click += new System.EventHandler(this.hide_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 68);
+            this.Controls.Add(this.hide_btn);
+            this.Controls.Add(this.min_btn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "MoveMyMouse";
-            this.Deactivate += new System.EventHandler(this.Form1_Deactivate);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -213,6 +237,8 @@
         private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem 關於ToolStripMenuItem;
+        private System.Windows.Forms.Button min_btn;
+        private System.Windows.Forms.Button hide_btn;
     }
 }
 
