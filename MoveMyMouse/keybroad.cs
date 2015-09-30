@@ -25,7 +25,7 @@ namespace MoveMyMouse
             private static int s_KeyboardHookHandle;
 
             //是否只由這個Global Hook抓取鍵盤事件
-            public static bool globalControlOnly = true;
+            public static bool globalControlOnly = false;
 
             //Private KeyDown Event, 與GlobalKeyDown配合使用
             private static event KeyEventHandler _globalKeyDown;

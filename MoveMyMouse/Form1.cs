@@ -30,6 +30,16 @@ namespace MoveMyMouse
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //全域掛勾keyboard
+            try
+            {
+                KeyboardHook.GlobalKeyDown += KeyboardHook_KeyDown;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("GlobalKeyboardHook 失敗。程式終止");
+                this.Close();
+            }
             label1.Text = (CheckYourMouse.Interval / 1000).ToString();
             notifyIcon1.Text = (CheckYourMouse.Interval/1000).ToString()+" 秒移動一次";
             //KeyboardHook.globalControlOnly = false;  //只有Global KeyDown會起作用，其他程式不能攔截鍵盤事件
@@ -61,16 +71,7 @@ namespace MoveMyMouse
         private void changebackcolor_Tick(object sender, EventArgs e)
         {
             checkbackgroup();
-            try
-            {
-                KeyboardHook.GlobalKeyDown += KeyboardHook_KeyDown;
-            }
-            catch (Exception)
-            {
-                GC.Collect();
-            }
-             
-            
+
         }
 
         private void checkbackgroup() {
@@ -79,16 +80,10 @@ namespace MoveMyMouse
             {
                 if (before == after)
                 {
-                    //panel1.BackColor = System.Drawing.Color.Peru;
-                    //this.BackColor = System.Drawing.Color.Pink;
                     CheckYourMouse.Enabled = true;
-
-
                 }
                 else
                 {
-                    //panel1.BackColor = System.Drawing.Color.SeaGreen;
-                    //this.BackColor = System.Drawing.Color.SpringGreen;
                     after = before;
                     CheckYourMouse.Enabled = false;
                     label1.Text = (CheckYourMouse.Interval / 1000).ToString();
@@ -96,7 +91,6 @@ namespace MoveMyMouse
             }
             catch (Exception)
             {
-                GC.Collect();
             }
 
 
@@ -168,20 +162,19 @@ namespace MoveMyMouse
         {
             //string key = e.KeyCode.ToString();  //取得KeyCode字串
 
-            panel1.BackColor = System.Drawing.Color.SeaGreen;
+            //panel1.BackColor = System.Drawing.Color.SeaGreen;
             //this.BackColor = System.Drawing.Color.SeaGreen;
             CheckYourMouse.Enabled = false;
             label1.Text = (CheckYourMouse.Interval / 1000).ToString();
             //MessageBox.Show(key);
             //TODO: 加入處理KeyDown事件的程式
-            try
-            {
-                KeyboardHook.GlobalKeyDown -= KeyboardHook_KeyDown;
-            }
-            catch (Exception)
-            {
-                GC.Collect();
-            }
+            //try
+            //{
+            //    KeyboardHook.GlobalKeyDown -= KeyboardHook_KeyDown;
+            //}
+            //catch (Exception)
+            //{
+            //}
             //KeyboardHook.GlobalKeyDown -= KeyboardHook_KeyDown;
 
         }
