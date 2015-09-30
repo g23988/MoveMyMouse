@@ -41,13 +41,13 @@
             this.Restartself = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.關閉ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.關於ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.秒數設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.sToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.關於ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.關閉ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             // changebackcolor
             // 
             this.changebackcolor.Enabled = true;
+            this.changebackcolor.Interval = 1000;
             this.changebackcolor.Tick += new System.EventHandler(this.changebackcolor_Tick);
             // 
             // label1
@@ -126,14 +127,14 @@
             this.秒數設定ToolStripMenuItem,
             this.關閉ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 70);
             // 
-            // 關閉ToolStripMenuItem
+            // 關於ToolStripMenuItem
             // 
-            this.關閉ToolStripMenuItem.Name = "關閉ToolStripMenuItem";
-            this.關閉ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.關閉ToolStripMenuItem.Text = "關閉";
-            this.關閉ToolStripMenuItem.Click += new System.EventHandler(this.關閉ToolStripMenuItem_Click);
+            this.關於ToolStripMenuItem.Name = "關於ToolStripMenuItem";
+            this.關於ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.關於ToolStripMenuItem.Text = "關於";
+            this.關於ToolStripMenuItem.Click += new System.EventHandler(this.關於ToolStripMenuItem_Click);
             // 
             // 秒數設定ToolStripMenuItem
             // 
@@ -143,43 +144,43 @@
             this.sToolStripMenuItem2,
             this.sToolStripMenuItem3});
             this.秒數設定ToolStripMenuItem.Name = "秒數設定ToolStripMenuItem";
-            this.秒數設定ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.秒數設定ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.秒數設定ToolStripMenuItem.Text = "秒數設定";
             // 
             // sToolStripMenuItem
             // 
             this.sToolStripMenuItem.Name = "sToolStripMenuItem";
-            this.sToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.sToolStripMenuItem.Text = "10 s";
             this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
             // 
             // sToolStripMenuItem1
             // 
             this.sToolStripMenuItem1.Name = "sToolStripMenuItem1";
-            this.sToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.sToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
             this.sToolStripMenuItem1.Text = "60 s";
             this.sToolStripMenuItem1.Click += new System.EventHandler(this.sToolStripMenuItem1_Click);
             // 
             // sToolStripMenuItem2
             // 
             this.sToolStripMenuItem2.Name = "sToolStripMenuItem2";
-            this.sToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.sToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
             this.sToolStripMenuItem2.Text = "180 s";
             this.sToolStripMenuItem2.Click += new System.EventHandler(this.sToolStripMenuItem2_Click);
             // 
             // sToolStripMenuItem3
             // 
             this.sToolStripMenuItem3.Name = "sToolStripMenuItem3";
-            this.sToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.sToolStripMenuItem3.Size = new System.Drawing.Size(105, 22);
             this.sToolStripMenuItem3.Text = "300 s";
             this.sToolStripMenuItem3.Click += new System.EventHandler(this.sToolStripMenuItem3_Click);
             // 
-            // 關於ToolStripMenuItem
+            // 關閉ToolStripMenuItem
             // 
-            this.關於ToolStripMenuItem.Name = "關於ToolStripMenuItem";
-            this.關於ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.關於ToolStripMenuItem.Text = "關於";
-            this.關於ToolStripMenuItem.Click += new System.EventHandler(this.關於ToolStripMenuItem_Click);
+            this.關閉ToolStripMenuItem.Name = "關閉ToolStripMenuItem";
+            this.關閉ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.關閉ToolStripMenuItem.Text = "關閉";
+            this.關閉ToolStripMenuItem.Click += new System.EventHandler(this.關閉ToolStripMenuItem_Click);
             // 
             // Form1
             // 

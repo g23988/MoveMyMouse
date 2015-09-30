@@ -79,7 +79,7 @@ namespace MoveMyMouse
             {
                 if (before == after)
                 {
-                    panel1.BackColor = System.Drawing.Color.Peru;
+                    //panel1.BackColor = System.Drawing.Color.Peru;
                     //this.BackColor = System.Drawing.Color.Pink;
                     CheckYourMouse.Enabled = true;
 
@@ -87,7 +87,7 @@ namespace MoveMyMouse
                 }
                 else
                 {
-                    panel1.BackColor = System.Drawing.Color.SeaGreen;
+                    //panel1.BackColor = System.Drawing.Color.SeaGreen;
                     //this.BackColor = System.Drawing.Color.SpringGreen;
                     after = before;
                     CheckYourMouse.Enabled = false;
